@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for index in 1...30 {
+        for _ in 1...30 {
             playGame()
         }
     }
@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     
     func createUserGuessArray() -> [Int] {
         var resultsArray = [Int]()
-        for index in 1...3 {
-            var randomNumber = getRandomNumber()
+        for _ in 1...3 {
+            let randomNumber = getRandomNumber()
             resultsArray.append(randomNumber)
         }
         
@@ -35,9 +35,9 @@ class ViewController: UIViewController {
     
     func playGame() {
         let randomNumber = getRandomNumber()
-        println("Random number: \(randomNumber)")
-        var userGuesses = createUserGuessArray()
-        println("User guesses: \(userGuesses)")
+        print("Random number: \(randomNumber)")
+        let userGuesses = createUserGuessArray()
+        print("User guesses: \(userGuesses)")
         var result: String?
         
         for userGuess in userGuesses {
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             }
         }
         
-        println(result)
+        print(result)
     }
     
     override func didReceiveMemoryWarning() {
